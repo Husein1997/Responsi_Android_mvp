@@ -32,6 +32,7 @@ public class MainPresenterImp implements MainPresenter {
                     public void onResponse(Call<People> call, Response<People> response) {
                         if (response.isSuccessful()){
                             Log.i("xxxx", "Success : " + response.body().getData());
+                            mainView.setPeopleData(response.body().getData());
                         }else{
                             Log.i("xxxx", "Unsuccess : " + response.message());
                         }
